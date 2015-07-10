@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <div class="{% block class %}{% endblock %}">
+                {% set logo = get_config('site.logo') %}
+                {% if logo is not null %}{{ image(logo, true, get_config('site.title.name')) }}{% endif %}
+                <h1 class="page-header">{% block title %}{{ get_config('site.title.name') }}{% endblock %}</h1>
+                {% include 'helper/messages' %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
